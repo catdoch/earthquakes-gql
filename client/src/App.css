@@ -1,0 +1,31 @@
+#map {
+  position: relative;
+  height: 512px;
+  justify-self: center;
+  min-width: 320px;
+  width: 75%;
+  margin: 50px auto;
+}
+
+.data-module {
+  justify-self: stretch;
+  align-self: stretch;
+  text-align: center;
+  padding: 12px;
+  border: 1px solid #58B5BB;
+  display: grid;
+  background: #bce9ec;
+}
+
+.data-module p {
+  margin: 0;
+}
+
+.main {
+  display: grid;
+  box-sizing: border-box;
+  width: 75%;
+  margin: 0 auto;
+  grid-template-columns: 25% 25% 25% 25%;
+  border: 2px solid #58B5BB;
+}

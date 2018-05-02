@@ -1,0 +1,7 @@
+/node_modules/
+/build/*
+/*karma.log
+.eslintcache
+npm-debug.log
+yarn-error.log
+.DS_Store
