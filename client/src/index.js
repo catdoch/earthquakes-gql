@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { getDateParams } from '../utils/getDate';
+import { friendlyDate } from './utils/getDate';
 
 import ApolloClient, { InMemoryCache } from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
@@ -18,7 +18,7 @@ const client = new ApolloClient({
 ReactDOM.render(
     <ApolloProvider client={client}>
         <div>
-            <h1>{`Earthquakes as of ${getDateParams()} (BST)`}</h1>
+            <h1>{`Earthquakes as of ${friendlyDate()} (BST)`}</h1>
             <Quakes />
         </div>
     </ApolloProvider>,

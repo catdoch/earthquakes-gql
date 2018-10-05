@@ -1,6 +1,6 @@
 const { ApolloServer, gql } = require('apollo-server-express');
 const fetch = require('node-fetch');
-const { getDateParams } = require('./client/utils/getDate');
+const { getDateParams } = require('./client/src/utils/getDate');
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`

@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './App.css';
-import marker from '../public/images/marker-icon-blue.png';
-import shadow from '../public/images/marker-shadow.png';
+import marker from './images/marker-icon-blue.png';
+import shadow from './images/marker-shadow.png';
 
 const icon = L.icon({
     iconUrl: marker,
