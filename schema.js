@@ -40,7 +40,8 @@ const server = new ApolloServer({
     typeDefs,
     resolvers,
     playground: {
-        endpoint: `http://localhost:4000/graphql`
+        endpoint: `https://earthquake-gql.herokuapp.com/graphql`,
+        introspection: true
     }
 });
 
