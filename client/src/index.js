@@ -12,7 +12,7 @@ import './index.css';
 const cache = new InMemoryCache();
 const client = new ApolloClient({
     cache,
-    uri: 'https://earthquake-gql.herokuapp.com/graphql'
+    uri: '/graphql'
 });
 
 ReactDOM.render(
