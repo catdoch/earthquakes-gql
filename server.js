@@ -1,10 +1,9 @@
 const express = require("express");
-const { graphqlExpress, graphiqlExpress } = require("apollo-server-express");
-const bodyParser = require("body-parser");
-const { ApolloEngine } = require("apollo-engine");
-const cors = require("cors");
+const path = require('path');
+require('dotenv').config();
+// const cors = require("cors");
 
-const { schema } = require("./schema");
+const { server } = require("./schema");
 
 const app = express();
 
@@ -14,41 +13,54 @@ if (!process.env.ENGINE_API_KEY) {
   );
 }
 
-app.use('*', cors({ origin: 'https://w51p0rml4z.lp.gql.zone/graphql' }));
+// app.use('*', cors({ origin: 'https://w51p0rml4z.lp.gql.zone/graphql' }));
 
-app.use('/graphql', bodyParser.json(), graphqlExpress({
-  schema: schema,
-  tracing: true
-}));
+server.applyMiddleware({app});
 
-app.use('/graphiql', graphiqlExpress({
-  endpointURL: '/graphql'
-}));
+// app.use('/graphql', bodyParser.json(), graphqlExpress({
+//   schema: schema,
+//   tracing: true
+// }));
+
+// app.use('/graphiql', graphiqlExpress({
+//   endpointURL: '/graphql'
+// }));
 
 const PORT = process.env.PORT || 4000;
 
-const engine = new ApolloEngine({
-  apiKey: process.env.ENGINE_API_KEY,
-  stores: [
-    {
-      name: "publicResponseCache",
-      inMemory: {
-        cacheSize: 10485760
-      }
-    }
-  ],
-  queryCache: {
-    publicFullQueryStore: "publicResponseCache"
-  }
+app.listen(PORT, () => {
+  console.log(`The server has started on port: ${PORT}`);
+  console.log(`http://localhost:${PORT}/graphql`);
 });
 
+app.use(express.static('/client/build'));
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/client/public/index.html');
+});
+
+// const engine = new ApolloEngine({
+//   apiKey: process.env.ENGINE_API_KEY,
+//   stores: [
+//     {
+//       name: "publicResponseCache",
+//       inMemory: {
+//         cacheSize: 10485760
+//       }
+//     }
+//   ],
+//   queryCache: {
+//     publicFullQueryStore: "publicResponseCache"
+//   }
+// });
+
 // Start the app
-engine.listen(
-  {
-    port: PORT,
-    expressApp: app
-  },
-  () => {
-    console.log(`Go to http://localhost:${PORT}/graphiql to run queries!`);
-  }
-);
+// engine.listen(
+//   {
+//     port: PORT,
+//     expressApp: app
+//   },
+//   () => {
+//     console.log(`Go to http://localhost:${PORT}/graphiql to run queries!`);
+//   }
+// );

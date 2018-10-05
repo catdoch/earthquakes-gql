@@ -1,0 +1,34 @@
+.mag-changer {
+    height: 44px;
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+}
+
+#map {
+    position: relative;
+    height: 512px;
+    justify-self: center;
+    min-width: 320px;
+    width: 100%;
+    margin: 50px auto;
+  }
+
+.map-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    margin: 0 auto;
+    overflow: hidden;
+    align-items: center;
+}
+
+.map-wrapper h2 {
+    position: absolute;
+    z-index: 20000;
+    background: #fd9000;
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+}
