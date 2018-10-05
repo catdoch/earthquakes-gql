@@ -6,7 +6,7 @@ import App from './App';
 import './quakes.css';
 
 const GET_QUAKE = gql`
-    query allQuakes($mag: Float!) {
+    query allQuakes($mag: Int!) {
         getQuakes(mag: $mag) {
             mag
             place

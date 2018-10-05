@@ -5,7 +5,7 @@ const { getDateParams } = require('./client/src/utils/getDate');
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
     type Query {
-        getQuakes(mag: Float!): [Features]
+        getQuakes(mag: Int!): [Features]
     }
     type Features @cacheControl(maxAge: 60) {
         title: String
