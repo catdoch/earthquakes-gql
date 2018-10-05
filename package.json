@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "./src/server.js",
   "author": "cdocherty",
+  "engines": {
+    "node": "8.9.4"
+  },
   "license": "MIT",
   "scripts": {
     "client": "cd client && yarn start",
