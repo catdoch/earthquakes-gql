@@ -29,7 +29,7 @@ class Quakes extends Component {
 
     updateValue(e, refetch) {
         this.setState({
-            mag: e.target.value
+            mag: parseInt(e.target.value, 10)
         }, () => {
             refetch();
         });
