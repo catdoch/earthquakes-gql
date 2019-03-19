@@ -21,7 +21,7 @@ class Quakes extends Component {
         super(props);
 
         this.state = {
-            mag: 3
+            mag: 4
         };
 
         this.updateValue = this.updateValue.bind(this);
