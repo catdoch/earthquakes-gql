@@ -12,12 +12,14 @@
     "server": "nodemon ./server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "start": "node server.js",
+	"cypress:open": "cypress open",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-stage-0": "^6.22.0",
+    "cypress": "^3.2.0",
     "nodemon": "^1.18.10"
   },
   "dependencies": {
