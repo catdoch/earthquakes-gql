@@ -28,4 +28,8 @@ describe('My First Test', () => {
     it('Changes the select to mag 3', () => {
         cy.get('.mag-changer').select('3');
     });
+
+    it('Checks map has loaded', () => {
+        cy.get('#map').find('.leaflet-pane')
+    });
 });
